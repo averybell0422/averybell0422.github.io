@@ -6,7 +6,7 @@
     <script src="jquery.min.js"></script>
     <style>
       body {
-         background-image: url("paper.gif");
+         background-image: url("../../images/backgroundforBB.jpeg");
         background-color: #cccccc;
 }
 
@@ -62,6 +62,7 @@
         // moves the Box to a new position on the screen along the X-Axis
         function moveBoxTo(newPositionX) {
           box.css("left", newPositionX);
+          box.css("top", newPositionY);
         }
 
         // changes the text displayed on the Box
@@ -74,14 +75,19 @@
         //////////////////////////////////////////////////////////////////
 
         // TODO 2 - Variable declarations
-       var positionX = 0;
+       var positionX = 2;
 
-       var points = 0;
+       var points = 3;
 
        var speed = 10;
 
+        var positionY; 
 
+        var speedY; 
 
+        var boardHeight = jQuery(window).height();
+
+          var randNum = Math.random() * 100;
         /**
          * This Function will be called 20 times/second.
          * Each time it is called, it should move the Box to a new location.
@@ -97,14 +103,16 @@
           if (positionX > boardwidth) {
            
           speed *= -1;
-          } else if (positionX < 0) {
+          } else if (positionX < 4) {
            
           speed *= -1; }
             if (positionY > boardHeight) {
               speed *= -1; 
 
-            } else if (positiony < 0) {
-          speed *= -1;}
+            } else if (positionY < 4) {
+          speed *= -1;} 
+
+          moveBoxTo(positionX, positionY);
         }
 
         /**
@@ -116,7 +124,7 @@
          */
         function handleBoxClick() {
 
-          positionX === 0;
+          positionX === 2;
            changeBoxText(points);
            points++; // Increases variableName by 1
           speed = 3 * points + 10;
