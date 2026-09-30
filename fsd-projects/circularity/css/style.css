@@ -46,4 +46,15 @@
 #hostGameBtn {
     background: #0080FF;
     color: white;
-}
+}  
+
+
+
+body {
+                background: url("../img/circularity\ project.webp") no-repeat center center fixed;
+                background-color: #cccccc;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
